@@ -1,0 +1,19 @@
+{
+  "name": "vanillaeln-api",
+  "version": "1.0.0",
+  "description": "Api para un cuaderno de laboratorio electrónico",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./server/app.js",
+    "dev": "nodemon ./server/app.js"
+  },
+  "author": "Leandro Hornos",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
