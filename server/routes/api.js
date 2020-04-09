@@ -35,7 +35,7 @@ router.post("/proyecto", (req, res) => {
   res.send("el nuevo proyecto se ha creado con éxito");
 });
 
-/* REPORTES------------------------------------------------------- */
+/* REPORTES ------------------------------------------------------ */
 
 /* Ver un reporte */
 router.get("/reporte", (req, res) => {
@@ -44,6 +44,8 @@ router.get("/reporte", (req, res) => {
 
 /*Guardar un reporte */
 router.post("/reporte", (req, res) => {
+  console.log("se ha recibido el siguiente mensaje: ");
+  console.log(req.body);
   res.send("El reporte se ha almacenado con éxito");
 });
 module.exports = router;
