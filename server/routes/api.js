@@ -1,8 +1,15 @@
 //En esta ruta se accede a las funcionalidades del cuaderno de laboratorio
 
 const express = require("express");
-
 const router = express.Router();
+
+//Controladores
+const contProyecto = require("../controllers/controller.proyecto");
+const contReporte = require("../controllers/controller.proyecto");
+
+//Modelos
+const Proyecto = require("../models/proyecto.model");
+const Reporte = require("../models/reporte.model");
 
 // Mensajes provisorios:
 mensaje = {
@@ -19,23 +26,25 @@ router.get("/", (req, res) => {
   res.send("Bienvenido al la api");
 });
 
-/* PROYECTOS ----------------------------------------------------- */
+/* Rutas de PROYECTOS ----------------------------------------- */
 
-/* Ver los proyectos */
+// Ver todos los proyectos:
+
 router.get("/proyectos", (req, res) => {
   res.send(mensaje.proyectos);
 });
-/*Ver los reportes de un proyecto (Indice de ensayos)*/
+
+// Ver un proyecto:
+
 router.get("/proyecto", (req, res) => {
   res.send(mensaje.proyecto);
 });
 
-/* Crear un nuevo proyecto */
-router.post("/proyecto", (req, res) => {
-  res.send("el nuevo proyecto se ha creado con éxito");
-});
+// Crear un nuevo proyecto:
 
-/* REPORTES ------------------------------------------------------ */
+router.post("/proyecto", contProyecto.guardar);
+
+/* rutas de REPORTES   -------------------------------------- */
 
 /* Ver un reporte */
 router.get("/reporte", (req, res) => {
