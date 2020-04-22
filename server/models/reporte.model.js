@@ -1,4 +1,4 @@
-const mongoose = requiere("mongoose");
+const mongoose = require("mongoose");
 
 const schemaReporte = mongoose.Schema({
   encabezado: {
@@ -50,4 +50,4 @@ const schemaReporte = mongoose.Schema({
   conclusiones: String,
 });
 
-export default mongoose.model("reportes", schemaReporte);
+module.exports = mongoose.model("reportes", schemaReporte);

@@ -1,4 +1,4 @@
-const mongoose = requiere("mongoose");
+const mongoose = require("mongoose");
 
 const schemaProyecto = mongoose.Schema({
   fecha: { type: Date, default: Date.now },
@@ -12,4 +12,4 @@ const schemaProyecto = mongoose.Schema({
   tipo: String,
 });
 
-export default mongoose.model("proyectos", schemaProyecto);
+module.exports = mongoose.model("proyectos", schemaProyecto);
