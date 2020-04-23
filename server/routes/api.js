@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 //Controladores
-const contProyecto = require("../controllers/controller.proyecto");
+const controllerProyecto = require("../controllers/controller.proyecto");
 const contReporte = require("../controllers/controller.proyecto");
 
 //Modelos
@@ -40,9 +40,11 @@ router.get("/proyecto", (req, res) => {
   res.send(mensaje.proyecto);
 });
 
-// Crear un nuevo proyecto:
+// CRUD proyecto:
 
-router.post("/proyecto", contProyecto.guardar);
+router.post("/proyecto", controllerProyecto.create);
+// router.put("/proyecto/:_id", controllerProyecto.update);
+// router.delete("/proyecto/:_id", controllerProyecto.delete);
 
 /* rutas de REPORTES   -------------------------------------- */
 
