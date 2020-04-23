@@ -30,21 +30,17 @@ router.get("/", (req, res) => {
 
 // Ver todos los proyectos:
 
-router.get("/proyectos", (req, res) => {
-  res.send(mensaje.proyectos);
-});
+router.get("/proyectos", controllerProyecto.readAll);
 
 // Ver un proyecto:
 
-router.get("/proyecto", (req, res) => {
-  res.send(mensaje.proyecto);
-});
+router.get("/proyecto/:num", controllerProyecto.readOne);
 
 // CRUD proyecto:
 
 router.post("/proyecto", controllerProyecto.create);
-// router.put("/proyecto/:_id", controllerProyecto.update);
-// router.delete("/proyecto/:_id", controllerProyecto.delete);
+router.put("/proyecto/:num", controllerProyecto.update);
+// router.delete("/proyecto/:num", controllerProyecto.delete);
 
 /* rutas de REPORTES   -------------------------------------- */
 
