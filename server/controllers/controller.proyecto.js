@@ -18,7 +18,7 @@ exports.readOne = async function (req, res) {
 /* leer todos los proyectos de la base de datos */
 
 exports.readAll = async function (req, res) {
-  console.log("controller.proyecto.readOne dice: este es el body:", req.body);
+  console.log("controller.proyecto.readAll dice hola");
   try {
     let proyectos = await Proyecto.find();
     console.log("la base de datos devolvió esto:", proyectos);
