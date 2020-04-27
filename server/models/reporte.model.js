@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 
 const schemaReporte = mongoose.Schema({
+  status: { type: String, default: "activo" },
   encabezado: {
-    activo: { type: Boolean, default: true },
-    idProyecto: { type: String, required: true },
-    nombreProyecto: { type: String, required: true },
-    idReporte: { type: Number, required: true },
+    numProyecto: { type: String, required: true },
+    numReporte: { type: Number, required: true },
     etapa: { type: String, required: true },
     via: String,
     pmProducto: { type: Number, required: true },
@@ -13,6 +12,7 @@ const schemaReporte = mongoose.Schema({
     referencias: String,
     autor: { type: String, required: true },
     responsable: { type: String, required: true },
+    keywords: [String],
   },
   objetivo: { type: String, required: true },
   reaccion: String,
@@ -34,6 +34,7 @@ const schemaReporte = mongoose.Schema({
     {
       hora: Date,
       texto: String,
+      autor: { type: String, default: "Usuario" },
     },
   ],
   resultados: {
@@ -47,6 +48,13 @@ const schemaReporte = mongoose.Schema({
     efsAcuosos: Number,
     factorE: Number,
   },
+  comentarios: [
+    {
+      hora: Date,
+      texto: String,
+      autor: { type: String, default: "Usuario" },
+    },
+  ],
   conclusiones: String,
 });
 

@@ -5,7 +5,7 @@ const router = express.Router();
 
 //Controladores
 const controllerProyecto = require("../controllers/controller.proyecto");
-const contReporte = require("../controllers/controller.proyecto");
+const controllerReporte = require("../controllers/controller.proyecto");
 
 //Modelos
 const Proyecto = require("../models/proyecto.model");
@@ -50,9 +50,7 @@ router.get("/reporte", (req, res) => {
 });
 
 /*Guardar un reporte */
-router.post("/reporte", (req, res) => {
-  console.log("se ha recibido el siguiente mensaje: ");
-  console.log(req.body);
-  res.send("El reporte se ha almacenado con éxito");
-});
+router.post("/reporte", controllerReporte.create);
+
+
 module.exports = router;
