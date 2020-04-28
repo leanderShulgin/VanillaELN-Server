@@ -5,7 +5,7 @@ const router = express.Router();
 
 //Controladores
 const controllerProyecto = require("../controllers/controller.proyecto");
-const controllerReporte = require("../controllers/controller.proyecto");
+const controllerReporte = require("../controllers/controller.reporte");
 
 //Modelos
 const Proyecto = require("../models/proyecto.model");
@@ -29,15 +29,12 @@ router.get("/", (req, res) => {
 /* Rutas de PROYECTOS ----------------------------------------- */
 
 // Ver todos los proyectos:
-
 router.get("/proyectos", controllerProyecto.readAll);
 
 // Ver un proyecto:
-
 router.get("/proyecto/:num", controllerProyecto.readOne);
 
 // CRUD proyecto:
-
 router.post("/proyecto", controllerProyecto.create);
 router.put("/proyecto/:num", controllerProyecto.update);
 // router.delete("/proyecto/:num", controllerProyecto.delete);
@@ -45,12 +42,9 @@ router.put("/proyecto/:num", controllerProyecto.update);
 /* rutas de REPORTES   -------------------------------------- */
 
 /* Ver un reporte */
-router.get("/reporte", (req, res) => {
-  res.send(mensaje.reporte);
-});
+router.get("/reporte/:_id", controllerReporte.readOne);
 
 /*Guardar un reporte */
 router.post("/reporte", controllerReporte.create);
-
 
 module.exports = router;
