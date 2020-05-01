@@ -1,7 +1,6 @@
 const Proyecto = require("../models/proyecto.model");
 
 /* leer un proyecto de la base de datos */
-
 exports.readOne = async function (req, res) {
   console.log("controller.proyecto.readOne dice: este es el body:", req.body);
   const num = req.params.num;
@@ -16,7 +15,6 @@ exports.readOne = async function (req, res) {
 };
 
 /* leer todos los proyectos de la base de datos */
-
 exports.readAll = async function (req, res) {
   console.log("controller.proyecto.readAll dice hola");
   try {
@@ -29,7 +27,6 @@ exports.readAll = async function (req, res) {
 };
 
 /* crear un nuevo proyecto */
-
 exports.create = async function (req, res) {
   console.log("controller.proyecto.guardar dice: este es el body:", req.body);
   let data = req.body;
@@ -47,7 +44,6 @@ exports.create = async function (req, res) {
 };
 
 /* Actualizar un proyecto */
-
 exports.update = async function (req, res) {
   console.log(
     "controller.proyecto.actualizar dice: este es el body:",

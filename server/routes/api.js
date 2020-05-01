@@ -47,4 +47,6 @@ router.get("/reporte/:_id", controllerReporte.readOne);
 /*Guardar un reporte */
 router.post("/reporte", controllerReporte.create);
 
+router.put("/reporte/:_id", controllerReporte.update);
+
 module.exports = router;
