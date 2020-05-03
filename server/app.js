@@ -24,7 +24,6 @@ app.use("/api", require("./routes/api"));
 
 // Conexion MongoDB
 const dboptions = {
-  reconnectTries: Number.MAX_VALUE,
   poolSize: 10,
   useUnifiedTopology: true,
   useNewUrlParser: true,

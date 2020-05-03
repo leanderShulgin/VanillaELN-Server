@@ -20,8 +20,8 @@ const schemaReporte = mongoose.Schema({
     {
       nombre: String,
       origen: String,
-      masa: String,
-      pureza: String,
+      masa: Number,
+      pureza: Number,
       pm: Number,
       moles: Number,
       rm: Number,
