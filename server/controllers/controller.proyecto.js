@@ -11,10 +11,10 @@ exports.readOne = async function (req, res) {
     console.log("la base de datos devolvió este proyecto:", proyecto);
     let reportes = await Reporte.find(
       { "encabezado.numProyecto": num },
-      "encabezado objetivo conclusiones"
+      "encabezado objetivo resultados conclusiones"
     );
     console.log("el proyecto tiene estos reportes: ", reportes);
-    res.json({proyecto, reportes});
+    res.json({ proyecto, reportes });
   } catch (err) {
     res.send("Ha ocurrido el siguiente error al buscar el proyecto: ", err);
   }
