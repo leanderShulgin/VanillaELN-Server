@@ -1,4 +1,5 @@
 const Proyecto = require("../models/proyecto.model");
+const Reporte = require("../models/reporte.model");
 
 /* leer un proyecto de la base de datos */
 exports.readOne = async function (req, res) {
@@ -6,9 +7,14 @@ exports.readOne = async function (req, res) {
   const num = req.params.num;
   console.log("este es el número de proyecto a buscar: ", num);
   try {
-    let data = await Proyecto.findOne({ num: num });
-    console.log("la base de datos devolvió esto:", data);
-    res.json(data);
+    let proyecto = await Proyecto.findOne({ num: num });
+    console.log("la base de datos devolvió este proyecto:", proyecto);
+    let reportes = await Reporte.find(
+      { "encabezado.numProyecto": num },
+      "encabezado objetivo"
+    );
+    console.log("el proyecto tiene estos reportes: ", reportes);
+    res.json({proyecto, reportes});
   } catch (err) {
     res.send("Ha ocurrido el siguiente error al buscar el proyecto: ", err);
   }
