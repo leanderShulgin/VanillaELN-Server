@@ -10,9 +10,14 @@ exports.readOne = async function (req, res) {
       "voy a buscar el proyecto nro: ",
       reporte.encabezado.numProyecto
     );
-    const proyecto = await Proyecto.findOne({
+    let proyecto = await Proyecto.findOne({
       num: reporte.encabezado.numProyecto,
     });
+    const repCount = await Reporte.countDocuments({
+      "encabezado.numProyecto": proyecto.num,
+    });
+    proyecto = JSON.parse(JSON.stringify(proyecto));
+    proyecto["reportes"] = repCount;
     const data = {
       reporte: reporte,
       proyecto: proyecto,

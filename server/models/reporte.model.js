@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const schemaReporte = mongoose.Schema({
   status: { type: String, default: "activo" },
   encabezado: {
-    numProyecto: { type: String, required: true },
+    numProyecto: { type: Number, required: true },
     numReporte: { type: Number, required: true },
     etapa: { type: String, required: true },
     via: String,
