@@ -22,10 +22,18 @@ exports.readOne = async function (req, res) {
 
 /* leer todos los proyectos de la base de datos */
 exports.readAll = async function (req, res) {
-  console.log("controller.proyecto.readAll dice hola");
   try {
-    let proyectos = await Proyecto.find();
-    console.log("la base de datos devolvió esto:", proyectos);
+    let rawData = await Proyecto.find();
+    let proyectos = JSON.parse(JSON.stringify(rawData));
+    //Cuento los reportes de cada proyecto:
+    for await (p of proyectos) {
+      let num = p.num;
+      let cuenta = await Reporte.countDocuments({
+        "encabezado.numProyecto": num,
+      });
+      p["reportes"] = cuenta;
+    }
+    // console.log("proyectos contados", proyectos);
     res.json(proyectos);
   } catch (err) {
     res.send("Ha ocurrido el siguiente error al buscar los proyectos: ", err);
