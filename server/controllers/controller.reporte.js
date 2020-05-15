@@ -3,7 +3,7 @@ const Proyecto = require("../models/proyecto.model");
 
 exports.readOne = async function (req, res) {
   const _id = req.params._id;
-  console.log("este es el número de proyecto a buscar: ", _id);
+  console.log("ReadONe dice: este es el número de proyecto a buscar: ", _id);
   try {
     let reporte = await Reporte.findOne({ _id: _id });
     console.log(
