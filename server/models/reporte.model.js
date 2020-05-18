@@ -15,7 +15,7 @@ const schemaReporte = mongoose.Schema({
     keywords: [String],
   },
   objetivo: { type: String, required: true },
-  reaccion: String,
+  reaccion: { kekule: String, smiles: [String] },
   reactivos: [
     {
       nombre: String,
