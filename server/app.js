@@ -6,6 +6,7 @@ require("dotenv/config");
 
 // Parseo JSON
 app.use(express.json());
+app.use(express.static("public"));
 
 // Headers
 app.use(function (req, res, next) {
