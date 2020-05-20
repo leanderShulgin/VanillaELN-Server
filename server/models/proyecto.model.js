@@ -9,6 +9,7 @@ const schemaProyecto = mongoose.Schema({
   pm: Number,
   responsable: { type: String, required: true },
   smiles: String,
+  kekule: String,
   tipo: String,
 });
 
