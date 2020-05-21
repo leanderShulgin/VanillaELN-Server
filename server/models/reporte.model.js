@@ -34,7 +34,13 @@ const schemaReporte = mongoose.Schema({
     {
       hora: Date,
       texto: String,
-      autor: { type: String, default: "Usuario" },
+      user: {
+        nombre: String,
+        id: String,
+        apellido: String,
+        titulo: String,
+        apodo: String,
+      },
     },
   ],
   resultados: {
@@ -52,7 +58,13 @@ const schemaReporte = mongoose.Schema({
     {
       hora: Date,
       texto: String,
-      autor: { type: String, default: "Usuario" },
+      user: {
+        nombre: String,
+        id: String,
+        apellido: String,
+        titulo: String,
+        apodo: String,
+      },
     },
   ],
   conclusiones: String,
