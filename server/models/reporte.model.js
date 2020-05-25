@@ -58,6 +58,8 @@ const schemaReporte = mongoose.Schema({
     {
       hora: Date,
       texto: String,
+      kekule: String,
+      tipo: { type: String, default: "text" },
       user: {
         nombre: String,
         id: String,
