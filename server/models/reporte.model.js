@@ -63,6 +63,7 @@ const schemaReporte = mongoose.Schema({
   comentarios: [
     {
       hora: Date,
+      editado: { type: Boolean, default: false },
       texto: String,
       kekule: String,
       tipo: { type: String, default: "text" },
