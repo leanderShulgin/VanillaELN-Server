@@ -43,24 +43,21 @@ const schemaReporte = mongoose.Schema({
       },
     },
   ],
-  resultados: {
-    masaProducto: Number,
-    purezaProducto: Number,
-    masaTeorica: Number,
-    rendimiento: Number,
-  },
-  productos: {
-    codigo: String,
-    descripcion: String,
-    densidad: { valor: { type: Number, default: 1 }, unidad: String },
-    cantidad: { valor: Number, unidad: String },
-    pureza: { valor: Number, unidad: String },
-    clase: String,
-    destino: String,
-  },
+  productos: [
+    {
+      codigo: String,
+      descripcion: String,
+      densidad: {
+        valor: { type: Number, default: 1 },
+        unidad: { type: String, default: "rel" },
+      },
+      cantidad: { valor: Number, unidad: String },
+      pureza: { valor: Number, unidad: String },
+      clase: String,
+      destino: String,
+    },
+  ],
   ambiental: {
-    efsOrganicos: Number,
-    efsAcuosos: Number,
     factorE: Number,
   },
   comentarios: [
