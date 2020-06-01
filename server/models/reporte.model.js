@@ -34,6 +34,9 @@ const schemaReporte = mongoose.Schema({
     {
       hora: Date,
       texto: String,
+      editado: { type: Boolean, default: false },
+      datos: [{ clase: String, valor: Number, unidad: String }],
+      muestras: [{ codigo: String, descripcion: String, link: String }],
       user: {
         nombre: String,
         id: String,
@@ -66,6 +69,7 @@ const schemaReporte = mongoose.Schema({
       editado: { type: Boolean, default: false },
       texto: String,
       kekule: String,
+      smiles: String,
       tipo: { type: String, default: "text" },
       user: {
         nombre: String,
