@@ -69,7 +69,7 @@ const schemaReporte = mongoose.Schema({
       editado: { type: Boolean, default: false },
       texto: String,
       kekule: String,
-      smiles: String,
+      smiles: [String],
       tipo: { type: String, default: "text" },
       user: {
         nombre: String,
